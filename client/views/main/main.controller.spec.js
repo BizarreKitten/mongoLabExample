@@ -14,10 +14,20 @@ describe('Testing controller: mainCtrl', function(){
         mainCtrl = $controller('mainCtrl', {
             $scope: scope
         });
+
+
     }));
 
     it('dummy test should pass', function(){
         expect(true).toEqual(true);
     });
+
+    it('should test addData function', function(){
+        scope.textField = 'squirrel';
+        scope.weightField = '5';
+        scope.addData();
+        expect(scope.itemsInList()).toEqual(1);
+        expect(scope.data[1].weight).toEqual(5);
+    })
 
 });
