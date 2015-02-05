@@ -27,7 +27,8 @@ describe('Testing controller: mainCtrl', function(){
         scope.weightField = '5';
         scope.addData();
         expect(scope.itemsInList()).toEqual(1);
-        expect(scope.data[1].weight).toEqual(5);
+        expect(scope.data[0].text).toBe('squirrel');
+        expect(scope.data[0].weight).toBe('5');
     })
 
 });
