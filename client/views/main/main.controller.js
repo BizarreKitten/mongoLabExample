@@ -20,7 +20,7 @@ angular.module("appModule")
 
         $scope.addData = function(){
             if($scope.textField.length >= 1 && $scope.weightField.length >= 1) {
-                $scope.data.push({text: $scope.textField, weight: $scope.weightField});
+                $scope.data.push({text: $scope.textField, weight: parseInt($scope.weightField)});
                 $http.post('api/pets', {text: $scope.textField, weight: $scope.weightField}).success(function(){
                     $scope.getPets();
                 });
@@ -32,6 +32,7 @@ angular.module("appModule")
         $scope.removeData = function(index){
             $http.delete('/api/pets/' + $scope.data[index]._id).success(function(){
                 $scope.getPets();
+                console.log("You just deleted an element at index: " + index);
             });
         };
 
