@@ -31,4 +31,18 @@ describe('Testing controller: mainCtrl', function(){
         expect(scope.data[0].weight).toBe('5');
     })
 
+    it('should test heaviestPet function', function(){
+        scope.textField = 'squirrel';
+        scope.weightField = '5';
+        scope.addData();
+        scope.textField = 'cat';
+        scope.weightField = '10';
+        scope.addData();
+        scope.textField = 'snake';
+        scope.weightField = '2';
+        scope.addData();
+        expect(scope.heaviestPet()).toBe('Heaviest: cat, 10');
+
+    })
+
 });
