@@ -31,7 +31,7 @@ exports.create = function(req, res) {
         } else {
             Pet.find(function (err, pets) {
                 if (err) {
-                    res.send(err);
+                    res.send(err);find
                 }
 
                 res.json(pets);

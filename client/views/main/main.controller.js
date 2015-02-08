@@ -44,4 +44,15 @@ angular.module("appModule")
             return $scope.data.length;
         };
 
+        $scope.heaviestPet = function(){
+            var heaviest = 0;
+            var animal = '';
+            for(var i=0; $scope.data.length > i; i++){
+                if(parseInt($scope.data[i].weight) > heaviest){
+                    heaviest = $scope.data[i].weight;
+                    animal = $scope.data[i].text;
+                }
+            }
+            return "Heaviest: " + animal + ", " + heaviest;
+        }
     });

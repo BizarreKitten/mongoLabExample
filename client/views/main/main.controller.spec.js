@@ -28,7 +28,7 @@ describe('Testing controller: mainCtrl', function(){
         scope.addData();
         expect(scope.itemsInList()).toEqual(1);
         expect(scope.data[0].text).toBe('squirrel');
-        expect(scope.data[0].weight).toBe('5');
+        expect(scope.data[0].weight).toEqual(5);
     })
 
     it('should test heaviestPet function', function(){
